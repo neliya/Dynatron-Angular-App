@@ -1,0 +1,36 @@
+.mat-header-cell{
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    width: 100%;
+}
+
+.mat-column-id{
+    max-width: 200px;
+}
+
+.mat-cell{
+    justify-content: center;
+}
+
+.mat-card-content{
+    padding-left: 10px;
+}
+
+.table-size{
+    height: calc(100vh - 220px);
+    overflow: auto;
+}
+
+.mat-form-field{
+    margin-top: 200px;
+}
+
+.no-wrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+

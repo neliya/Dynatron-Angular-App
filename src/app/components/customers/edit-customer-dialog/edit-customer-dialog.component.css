@@ -1,0 +1,17 @@
+.backdropBackground {
+    background-color: #fff !important;
+    backdrop-filter: blur(4px);
+    color: white !important;
+  }
+
+  .mat-dialog-container.mat-mdc-dialog-container {
+    background-color: #fff !important;
+  }
+
+  .form-fields{
+    width: 350px !important;
+  }
+
+  .customer-dialog{
+    color: transparent !important;
+  }

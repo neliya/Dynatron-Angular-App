@@ -1,0 +1,33 @@
+.navbar-vertical {
+    width: 200px;
+    height: 100vh;
+  }
+  
+  .navbar-nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: .5rem 1rem;
+  }
+  
+  .nav-link:hover, .nav-link:focus {
+    text-decoration: none;
+  }
+  
+  .nav-link.active {
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+  .nav-item{
+    margin-right: 40px;
+  }
+  
