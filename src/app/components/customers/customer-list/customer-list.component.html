@@ -1,13 +1,17 @@
-<div class="container my-5">
+
+<div *ngIf="isLoading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div [hidden]="isLoading" class="container my-5">
     <div class="px-32 w-100-p" class="primary-800">
         <div class fxLayout="row" fxLayoutAlign="space-between center">
             <h1 class="mb-0">Dynatron Software Customer List</h1>
         </div>
     </div>
-    <div class="py-16">
-        <div class="pb-16">
-            <mat-form-field style="margin-top: 20px; margin-bottom: 10px;">
-                <input matInput autocomplete="off" (keyup)="applyfilter($event)" placeholder="Filter Users"/>
+    <div>
+        <div>
+            <mat-form-field class="filter-input">
+                <input matInput autocomplete="off" (keyup)="applyfilter($event)" placeholder="Filter Users" />
                 <mat-hint *ngIf="shouldShowChar()" style="font-style: italic; font-size: 10px;">{{ shouldShowText() }}</mat-hint>
             </mat-form-field>
         </div>
@@ -15,25 +19,25 @@
             <mat-table [dataSource]="dataSource" matSort class="table-size">
                 <ng-container matColumnDef="id">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>User Id</mat-header-cell>
-                    <mat-cell *matCellDef="let element; let i = index">
+                    <mat-cell [style.color]="'black'" *matCellDef="let element; let i = index">
                         {{ i +1 }}
                     </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="firstName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
-                    <mat-cell *matCellDef="let data">
+                    <mat-cell [style.color]="'black'" *matCellDef="let data">
                         {{ data.firstName}}
                     </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="lastName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
-                    <mat-cell *matCellDef="let data">
+                    <mat-cell [style.color]="'black'" *matCellDef="let data">
                         {{ data.lastName}}
                     </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="email">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
-                    <mat-cell *matCellDef="let data">
+                    <mat-cell [style.color]="'black'" *matCellDef="let data">
                         {{ data.email}}
                     </mat-cell>
                 </ng-container>
@@ -42,17 +46,16 @@
                     <mat-cell *matCellDef="let data">
                         {{ data.phone}}
                         <button mat-icon-button (click)="openEditCustomerDialog(data)">
-                            <mat-icon style="color: #0073a8" >edit</mat-icon>
+                            <mat-icon style="color: lightgray" >edit</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="deleteCustomer(data)"><mat-icon style="color:red" >delete</mat-icon>
+                            <button mat-icon-button (click)="deleteCustomer(data)"><mat-icon  >delete</mat-icon>
                         </button>
                     </mat-cell>
                 </ng-container>
-                <mat-header-row *matHeaderRowDef="dataColumns; sticky: true" style="background-color: darkgrey;"></mat-header-row>
+                <mat-header-row *matHeaderRowDef="dataColumns; sticky: true" style="background-color: lightgray;"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: dataColumns"></mat-row>
-                <div *matNoDataRow class="mt-8 ml-8">No Data to Display</div>
             </mat-table>
-            <mat-paginator [pageSizeOptions]="[20,40,60]" showFirstLastButtons>s</mat-paginator>
+            <mat-paginator [pageSizeOptions]="[20,40,60]" showFirstLastButtons style="background-color: lightgray;"></mat-paginator>
         </div>
     </div>
 </div>

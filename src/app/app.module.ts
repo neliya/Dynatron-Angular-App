@@ -17,10 +17,10 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatSnackBar, MatSnackBarAction, MatSnackBarActions, MatSnackBarConfig, MatSnackBarContainer, MatSnackBarLabel, MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { EditCustomerDialogComponent } from './components/customers/edit-customer-dialog/edit-customer-dialog.component';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
@@ -58,13 +58,7 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
     MatButtonModule,
     MatDialogModule,
     MatIconModule,
-    MatSnackBarModule,
-    MatSnackBar,
-    MatSnackBarAction,
-    MatSnackBarConfig,
-    MatSnackBarActions,
-    MatSnackBarContainer,
-    MatSnackBarLabel,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

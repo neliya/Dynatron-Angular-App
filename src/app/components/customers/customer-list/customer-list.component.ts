@@ -22,6 +22,7 @@ const MIN_CHAR_REQUIRED_FOR_SEARCH = 2;
 export class CustomerListComponent implements OnInit{
 
   customers: Customer[]=[];
+  isLoading = true;
   searchedText = '';
 
   constructor(public customerService: CustomerService, public dialog: MatDialog, private router: Router){}
@@ -38,6 +39,11 @@ export class CustomerListComponent implements OnInit{
 
   getCustomers(): void{
     this.customerService.getAllCustomers()
+    .pipe(
+      finalize(() => {
+        this.isLoading = false;
+      })
+    )
     .subscribe({
       next: (customers) => {
         this.setupTable();

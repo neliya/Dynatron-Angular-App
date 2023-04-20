@@ -22,6 +22,7 @@ table{
 .table-size{
     height: calc(100vh - 220px);
     overflow: auto;
+    background-color: #fff;
 }
 
 .mat-form-field{
@@ -34,3 +35,8 @@ table{
     white-space: nowrap;
   }
 
+  .filter-input{
+    background-color: lightgray;
+    margin-top: 20px; 
+    margin-bottom: 10px;
+  }
