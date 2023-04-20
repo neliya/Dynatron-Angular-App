@@ -5,7 +5,7 @@
 <div [hidden]="isLoading" class="container my-5">
     <div class="px-32 w-100-p" class="primary-800">
         <div class fxLayout="row" fxLayoutAlign="space-between center">
-            <h1 class="mb-0">Dynatron Software Customer List</h1>
+            <h1 class="mb-0">Members</h1>
         </div>
     </div>
     <div>
@@ -46,16 +46,16 @@
                     <mat-cell [style.color]="'black'" *matCellDef="let data">
                         {{ data.phone}}
                         <button mat-icon-button (click)="openEditCustomerDialog(data)">
-                            <mat-icon style="color: lightgray" >edit</mat-icon>
+                            <mat-icon style="color: #7e6ccb" >edit</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="deleteCustomer(data)" style="color: lightgray"><mat-icon  >delete</mat-icon>
+                            <button mat-icon-button (click)="deleteCustomer(data)" style="color: #7e6ccb"><mat-icon  >delete</mat-icon>
                         </button>
                     </mat-cell>
                 </ng-container>
-                <mat-header-row *matHeaderRowDef="dataColumns; sticky: true" style="background-color: lightgray;"></mat-header-row>
+                <mat-header-row *matHeaderRowDef="dataColumns; sticky: true" style="background-color: #7e6ccb;"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: dataColumns"></mat-row>
             </mat-table>
-            <mat-paginator [pageSizeOptions]="[20,40,60]" showFirstLastButtons style="background-color: lightgray;"></mat-paginator>
+            <mat-paginator [pageSizeOptions]="[20,40,60]" showFirstLastButtons style="background-color: #7e6ccb;"></mat-paginator>
         </div>
     </div>
 </div>

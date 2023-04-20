@@ -30,4 +30,6 @@
   .nav-item{
     margin-right: 40px;
   }
-  
+  .active a{
+    color: red !important;
+}
