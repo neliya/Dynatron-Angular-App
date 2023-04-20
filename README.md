@@ -11,5 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Angular CLI
 
 ## Running the Application
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Run the ASP.NET as per Readme file.
+- Get the port its running at.
+- Change the baseUrl in environment.ts file.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
