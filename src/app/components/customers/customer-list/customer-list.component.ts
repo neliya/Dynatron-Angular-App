@@ -24,6 +24,7 @@ export class CustomerListComponent implements OnInit{
   customers: Customer[]=[];
   isLoading = true;
   searchedText = '';
+  isCustomerSelected = false;
 
   constructor(public customerService: CustomerService, public dialog: MatDialog, private router: Router){}
 
@@ -32,7 +33,7 @@ export class CustomerListComponent implements OnInit{
   @ViewChild(MatSort, { static: true })sort: MatSort = new MatSort;
 
   dataColumns = ['id','firstName', 'lastName','email','phone'];
-  dataSource = new MatTableDataSource<object>();
+  dataSource = new MatTableDataSource<Customer>();
   ngOnInit(): void{
     this.getCustomers();
   }
@@ -54,6 +55,12 @@ export class CustomerListComponent implements OnInit{
         console.log(response)
       }
     })
+  }
+
+  isSelected(data: any): boolean{
+    debugger
+    const selectedCustomer = sessionStorage.getItem('customerId');
+    return selectedCustomer === data.id;
   }
 
   setupTable(): void{

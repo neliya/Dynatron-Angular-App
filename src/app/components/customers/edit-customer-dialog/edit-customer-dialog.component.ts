@@ -63,6 +63,10 @@ export class EditCustomerDialogComponent {
   }
 
   updateCustomer(){
+
+    debugger
+    sessionStorage.clear();  
+
     const customerDetails = new Customer();
     customerDetails.id = this.getId();
     customerDetails.firstName = this.getFirstName();
@@ -70,10 +74,15 @@ export class EditCustomerDialogComponent {
     customerDetails.email = this.getEmail();
     customerDetails.phone = this.getPhone();
 
+    sessionStorage.setItem('customerId', this.getId()); 
+    sessionStorage.setItem('customerDetails', JSON.stringify(customerDetails)); 
+
     this.customerService.updateCustomer(this.getId(), customerDetails).subscribe({
       next: (customer) => {
         this.dialogRef.close();
       }
     });
+
+   
   }
 }
