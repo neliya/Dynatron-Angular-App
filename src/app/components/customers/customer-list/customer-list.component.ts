@@ -58,7 +58,6 @@ export class CustomerListComponent implements OnInit{
   }
 
   isSelected(data: any): boolean{
-    debugger
     const selectedCustomer = sessionStorage.getItem('customerId');
     return selectedCustomer === data.id;
   }
@@ -101,6 +100,8 @@ export class CustomerListComponent implements OnInit{
       lastName: editedCustomer.lastName,
       phone: editedCustomer.phone,
       email: editedCustomer.email,
+      createdDate: editedCustomer.createdDate,
+      lastUpdated: editedCustomer.lastUpdated,
     }
     this.dialog.open(EditCustomerDialogComponent,{
       data: customerData,

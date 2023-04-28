@@ -10,12 +10,16 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class AddCustomerComponent implements OnInit{
 
+  currentDate = Date.now();
+
   addCustomerRequest: Customer = {
     id: '',
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
+    createdDate: this.currentDate.toString(),
+    lastUpdated: this.currentDate.toString()
   }
 
   constructor(private customerService: CustomerService, private router: Router){

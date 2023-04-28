@@ -5,6 +5,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StringLiteral } from 'typescript';
 
 export interface EditCustomerDialogData{
   id: string;
@@ -12,6 +13,8 @@ export interface EditCustomerDialogData{
   lastName: string;
   email: string;
   phone: string;
+  createdDate: string;
+  lastUpdated: string;
 }
 
 @Component({
@@ -40,6 +43,8 @@ export class EditCustomerDialogComponent {
       lastName: [this.data?.lastName, Validators.required],
       email: [this.data?.email],
       phone: [this.data?.phone],
+      createdDate: [this.data?.createdDate],
+      lastUpdated:[this.data?.lastUpdated]
     });
   }
 
@@ -63,17 +68,15 @@ export class EditCustomerDialogComponent {
   }
 
   updateCustomer(){
-
-    debugger
-    sessionStorage.clear();  
-
     const customerDetails = new Customer();
     customerDetails.id = this.getId();
     customerDetails.firstName = this.getFirstName();
     customerDetails.lastName = this.getLastName();
     customerDetails.email = this.getEmail();
     customerDetails.phone = this.getPhone();
+    customerDetails.createdDate = this.data.createdDate;
 
+    sessionStorage.clear();  
     sessionStorage.setItem('customerId', this.getId()); 
     sessionStorage.setItem('customerDetails', JSON.stringify(customerDetails)); 
 
